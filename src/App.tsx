@@ -14,7 +14,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      {/* 👇 add basename for GitHub Pages */}
+      <BrowserRouter basename="/nxtbond-fashion-family">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/product/:id" element={<ProductDetail />} />
