@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Heart, Eye } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const FeaturedSection = () => {
   const featuredProducts = [
@@ -70,10 +71,10 @@ const FeaturedSection = () => {
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuredProducts.map((product) => (
-            <Card 
-              key={product.id}
-              className="group relative overflow-hidden bg-card shadow-elegant hover:shadow-premium transition-all duration-500 transform hover:-translate-y-1"
-            >
+            <Link key={product.id} to={`/product/${product.id}`}>
+              <Card 
+                className="group relative overflow-hidden bg-card shadow-elegant hover:shadow-premium transition-all duration-500 transform hover:-translate-y-1"
+              >
               {/* Product Image */}
               <div className="relative overflow-hidden">
                 <img 
@@ -154,7 +155,8 @@ const FeaturedSection = () => {
                   Add to Cart
                 </Button>
               </div>
-            </Card>
+              </Card>
+            </Link>
           ))}
         </div>
 
