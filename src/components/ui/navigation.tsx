@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X, ShoppingBag, User, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,26 +12,28 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-foreground">
-              <span className="text-gold">NXT</span>BOND
-            </h1>
+            <Link to="/">
+              <h1 className="text-2xl font-bold text-foreground">
+                <span className="text-gold">NXT</span>BOND
+              </h1>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a href="#" className="text-foreground hover:text-gold transition-colors duration-300 font-medium">
+              <Link to="/mens" className="text-foreground hover:text-gold transition-colors duration-300 font-medium">
                 Men's
-              </a>
-              <a href="#" className="text-foreground hover:text-gold transition-colors duration-300 font-medium">
+              </Link>
+              <Link to="/womens" className="text-foreground hover:text-gold transition-colors duration-300 font-medium">
                 Women's
-              </a>
-              <a href="#" className="text-foreground hover:text-gold transition-colors duration-300 font-medium">
+              </Link>
+              <Link to="/kids" className="text-foreground hover:text-gold transition-colors duration-300 font-medium">
                 Kids
-              </a>
-              <a href="#" className="text-foreground hover:text-gold transition-colors duration-300 font-medium">
+              </Link>
+              <Link to="/collections" className="text-foreground hover:text-gold transition-colors duration-300 font-medium">
                 Collections
-              </a>
+              </Link>
               <a href="#" className="text-foreground hover:text-gold transition-colors duration-300 font-medium">
                 About
               </a>
@@ -67,18 +70,18 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t border-border">
-              <a href="#" className="block px-3 py-2 text-foreground hover:text-gold transition-colors duration-300 font-medium">
+              <Link to="/mens" className="block px-3 py-2 text-foreground hover:text-gold transition-colors duration-300 font-medium">
                 Men's
-              </a>
-              <a href="#" className="block px-3 py-2 text-foreground hover:text-gold transition-colors duration-300 font-medium">
+              </Link>
+              <Link to="/womens" className="block px-3 py-2 text-foreground hover:text-gold transition-colors duration-300 font-medium">
                 Women's
-              </a>
-              <a href="#" className="block px-3 py-2 text-foreground hover:text-gold transition-colors duration-300 font-medium">
+              </Link>
+              <Link to="/kids" className="block px-3 py-2 text-foreground hover:text-gold transition-colors duration-300 font-medium">
                 Kids
-              </a>
-              <a href="#" className="block px-3 py-2 text-foreground hover:text-gold transition-colors duration-300 font-medium">
+              </Link>
+              <Link to="/collections" className="block px-3 py-2 text-foreground hover:text-gold transition-colors duration-300 font-medium">
                 Collections
-              </a>
+              </Link>
               <a href="#" className="block px-3 py-2 text-foreground hover:text-gold transition-colors duration-300 font-medium">
                 About
               </a>
